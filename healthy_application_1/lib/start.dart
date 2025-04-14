@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   }
 }  
 
+
 class LocationSelectionPage extends StatefulWidget {
   @override
   _LocationSelectionPageState createState() => _LocationSelectionPageState();
@@ -21,11 +22,11 @@ class LocationSelectionPage extends StatefulWidget {
 
 class _LocationSelectionPageState extends State<LocationSelectionPage> {
   String? selectedState;
-  String? selectedCounty;
+  String? selectedCounrty;
   String? selectedCity;
 
   List<String> states = ['California', 'Texas', 'Florida'];
-  List<String> counties = ['County A', 'County B', 'County C'];
+  List<String> countries = ['Counrty A', 'Counrty B', 'Counrty C'];
   List<String> cities = ['City 1', 'City 2', 'City 3'];
 
   @override
@@ -69,9 +70,9 @@ Container(
                   const SizedBox(height: 15),
                   buildDropdown(
                     hint: 'Country',
-                    value: selectedCounty,
-                    items: counties,
-                    onChanged: (value) => setState(() => selectedCounty = value),
+                    value: selectedCounrty,
+                    items: countries,
+                    onChanged: (value) => setState(() => selectedCounrty = value),
                   ),
                   const SizedBox(height: 15),
                   buildDropdown(
@@ -109,7 +110,8 @@ Container(
     required String? value,
     required List<String> items,
     required ValueChanged<String?> onChanged,
-  }) {
+  })
+   {
     return DropdownButtonFormField<String>(
       value: value,
       hint: Row(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:healthy_application_1/confirm.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -85,6 +87,10 @@ Container(
                   ElevatedButton(
                     onPressed: () {
                       // Handle start action
+                       Navigator.push(
+         context,
+         MaterialPageRoute(builder: (context) => ConfirmInfoScreen()),
+       );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green,

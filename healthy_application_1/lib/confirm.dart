@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthy_application_1/changePassword.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -83,7 +84,7 @@ class _ConfirmInfoScreenState extends State<ConfirmInfoScreen> {
               style: TextStyle(fontWeight: FontWeight.bold,color: const Color.fromARGB(255, 86, 85, 85)),),
               GestureDetector(
                 onTap: () {
-                  // Navigate to login screen
+                  //todo: Navigate to login screen
                 },
                 child: Text(
                   "Login Now",
@@ -95,7 +96,11 @@ class _ConfirmInfoScreenState extends State<ConfirmInfoScreen> {
           SizedBox(height: 40),
           ElevatedButton(
             onPressed: () {
-              // Handle create account
+              //? Handle create account
+               Navigator.push(
+         context,
+         MaterialPageRoute(builder: (context) => ChangePasswordScreen()),
+       );
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xFF5FC26E),

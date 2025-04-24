@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:healthy_application_1/home.dart';
+import 'package:healthy_application_1/profil.dart';
+import 'package:healthy_application_1/profiletoFollow.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: RestaurantPage(),
+      home: ProfileFollowPage(),
     );
   }
 }

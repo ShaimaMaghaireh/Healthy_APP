@@ -23,6 +23,131 @@ class _RestaurantPageState extends State<RestaurantPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: Drawer(
+      child: Container(
+        color: Color(0xFFF1F6D9),
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            Container(
+               decoration: const BoxDecoration(
+    image: DecorationImage(
+      image: AssetImage('assets/Log-Rectangle.png'),
+      fit: BoxFit.fitHeight,
+    ),
+  ),
+              height: 180,
+              child: Stack(
+                children: [
+                
+                  Positioned(
+                    top: 50,
+                    left: 16,
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage('assets/profile.jpg'),
+                      // TODO: Backend - Load profile image dynamically
+                    ),
+                  ),
+                  Positioned(
+                    top: 60,
+                    left: 90,
+                    child: Text(
+                      'Amjad alokla',
+                      style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                 
+                  Positioned(
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    child: Container(
+                      height: 20,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF1F6D9),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 10),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text("Account settings", style: TextStyle(color: Colors.grey)),
+            ),
+            ListTile(
+              title: Text('Edit Profile'),
+              trailing: Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () {
+                // TODO: Implement Edit Profile
+              },
+            ),
+            ListTile(
+              title: Text('Change password'),
+              trailing: Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () {
+                // TODO: Implement Change Password
+              },
+            ),
+            SwitchListTile(
+              title: Text('Notification'),
+              value: false,
+              onChanged: (bool value) {
+                // TODO: Implement Notification toggle
+              },
+            ),
+            Divider(thickness: 1),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text("More", style: TextStyle(color: Colors.grey)),
+            ),
+            ListTile(
+              title: Text('privacy policy'),
+              trailing: Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () {
+                // TODO: Implement Privacy Policy
+              },
+            ),
+            ListTile(
+              title: Text('About us'),
+              trailing: Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () {
+                // TODO: Implement About Us
+              },
+            ),
+
+            SizedBox(height: 40),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50.0),
+              child: OutlinedButton.icon(
+                onPressed: () {
+                  // TODO: Implement Log Out
+                },
+                icon: Icon(Icons.logout, color: Colors.black),
+                label: Text(
+                  'Log Out',
+                  style: TextStyle(color: Colors.black),
+                ),
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: Colors.black),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
       backgroundColor: Color(0xFFF1F6D9),
       appBar: AppBar(
         backgroundColor: Color(0xFFF1F6D9),
@@ -36,70 +161,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
           ],
         ),
       ),
-        endDrawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-      image:NetworkImage('https://i.etsystatic.com/23519655/r/il/9dfa6d/6145262663/il_fullxfull.6145262663_g2h0.jpg'),fit:BoxFit.cover,opacity:0.5 ),
-                color: Color.fromARGB(255, 136, 157, 247),
-              ),
-              child: Text(
-                'More Services',
-                style: TextStyle(color: Colors.white, fontSize: 24),
-              ),
-            ),
-            ListTile(
-              title: Text('About App',style: 
-              TextStyle(fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 84, 113, 195),
-              letterSpacing: 2),),
-              onTap: () {
-                // Handle item tap
-    // Navigator.push( context, MaterialPageRoute(builder: (context) => AboutScreen()),
-    //             );
-              },
-            ),
-           ListTile(
-  title: Text('Book Review',style: 
-              TextStyle(fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 84, 113, 195),
-              letterSpacing: 2)),
-  onTap: () {
-    // Navigator.push(
-    //   context,
-    //   MaterialPageRoute(builder: (context) => BookReviewScreen()),
-    // );
-  },
-),
-ListTile(
-              title: Text('Profile',style: 
-              TextStyle(fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 84, 113, 195),
-              letterSpacing: 2)),
-              onTap: () {
-    //             // Handle item tap
-    // Navigator.push( context, MaterialPageRoute(builder: (context) => ProfilePage()),
-    //             );
-              },
-            ),
-            ListTile(
-              title: Text('Reading List',style: 
-              TextStyle(fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 84, 113, 195),
-              letterSpacing: 2)),
-              onTap: () {
-                // Handle item tap
-              // Navigator.push( context, MaterialPageRoute(builder: (context) => ReadingListPage()),
-              //   );
-              },
-            ),
-          ],
-        ),
-        
-      ),
+      
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
@@ -164,9 +226,10 @@ ListTile(
                   childAspectRatio: 1.1,
                   mainAxisSpacing: 12,
                   crossAxisSpacing: 12,
+                  mainAxisExtent: 120,
                 ),
                 itemBuilder: (context, index) {
-                  return buildRestaurantCard();
+                  return buildRestaurantCard2();
                 },
               ),
             ),
@@ -203,10 +266,10 @@ ListTile(
           Row(
             children: [
  CircleAvatar(
-  maxRadius: 45,
+  maxRadius: 35,
   child: Image.network
-("https://www.tastebudsmarketdelivery.com/uploads/b/35257920-917b-11ee-9aa7-6527960c123f/Taste%20Buds.png"),),
-       SizedBox(width: 1),
+("https://www.tastebudsmarketdelivery.com/uploads/b/35257920-917b-11ee-9aa7-6527960c123f/Taste%20Buds.png"),
+),
 
        Column(children: [
         Text("Taste Buds", style: TextStyle(fontWeight: FontWeight.bold)),
@@ -234,29 +297,126 @@ Column(
             ]
 
           ),
-          // SizedBox(height: 5),
-          // Text("Taste Buds", style: TextStyle(fontWeight: FontWeight.bold)),
-          // Row(
-          //   children: [
-          //     Icon(Icons.star, size: 16, color: Colors.orange),
-          //     Text("5.0", style: TextStyle(fontSize: 12)),
-          //     Text(" (+160)", style: TextStyle(fontSize: 12, color: Colors.grey)),
-          //   ],
-          // ),
-          // Text("A vegan restaurant offering innovative.", style: TextStyle(fontSize: 11)),
-          // Spacer(),
-          // Column(
-          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //   children: [
-          //     Icon(Icons.favorite_border),
-          //     SizedBox(width: 20,),
-          //     Icon(Icons.menu),
-          //   ],
-          // )
+        
         ],
       ),
     );
   }
+
+
+//    Widget buildRestaurantCard2() {
+//    return Container(
+//       padding: EdgeInsets.all(15),
+//       decoration: BoxDecoration(
+//         color: Colors.green.shade100,
+//         borderRadius: BorderRadius.circular(15),
+//       ),
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.start,
+//         children: [
+//           Row(
+//             children: [
+//  CircleAvatar(
+//   maxRadius: 35,
+//   child: Image.network
+// ("https://www.tastebudsmarketdelivery.com/uploads/b/35257920-917b-11ee-9aa7-6527960c123f/Taste%20Buds.png"),
+// ),
+
+//        Column(children: [
+//         Text("Taste Buds", style: TextStyle(fontWeight: FontWeight.bold)),
+//          Row(
+//             children: [
+//               Icon(Icons.star, size: 16, color: Colors.orange),
+//               Text("5.0", style: TextStyle(fontSize: 12)),
+//               Text(" (+160)", style: TextStyle(fontSize: 12, color: Colors.grey)),
+//             ],
+//           ),
+//           Text('''         A vegan restaurant
+//         offering innovative''',
+//            style: TextStyle(fontSize: 11)),
+//        ],),
+
+// Column(
+//             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//             children: [
+//               Icon(Icons.favorite_border),
+//               SizedBox(height: 40,),
+//               Icon(Icons.menu),
+//             ],
+//           )
+       
+//             ]
+
+//           ),
+        
+//         ],
+//       ),
+//     );
+//   }
+
+
+Widget buildRestaurantCard2() {
+  return Container(
+    padding: EdgeInsets.all(15),
+    decoration: BoxDecoration(
+      color: Colors.green.shade100,
+      borderRadius: BorderRadius.circular(15),
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+          //  SizedBox(width: 10),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+  maxRadius: 20,
+  child: Image.network
+("https://www.tastebudsmarketdelivery.com/uploads/b/35257920-917b-11ee-9aa7-6527960c123f/Taste%20Buds.png"),
+),
+                 
+                  Text("Taste Buds", style: TextStyle(fontWeight: FontWeight.bold)),
+                  SizedBox(height: 4),
+                  Row(
+                    children: [
+                      Icon(Icons.star, size: 16, color: Colors.orange),
+                      SizedBox(width: 4),
+                      Text("5.0", style: TextStyle(fontSize: 12)),
+                      SizedBox(width: 4),
+                      Text("(+160)", style: TextStyle(fontSize: 12, color: Colors.grey)),
+                    ],
+                  ),
+                 // SizedBox(height: 4),
+//   Text('''A veganrestaurant 
+// offering innovative''',
+//                     style: TextStyle(fontSize: 11),
+//                     maxLines: 2,
+//                     overflow: TextOverflow.ellipsis,
+//                   ),
+                ],
+              ),
+            ),
+            SizedBox(width: 5),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Icon(Icons.favorite_border),
+                SizedBox(height: 40),
+                Icon(Icons.menu),
+              ],
+            ),
+          ],
+        ),
+      ],
+    ),
+  );
+}
+
 
   Widget buildTab(String label, int index) {
     final isSelected = selectedIndex == index;

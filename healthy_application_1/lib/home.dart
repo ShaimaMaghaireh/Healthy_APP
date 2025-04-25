@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
+import 'package:healthy_application_1/changePassword.dart';
+import 'package:healthy_application_1/profil.dart';
 
 class RestaurantPage extends StatefulWidget {
   @override
@@ -85,6 +87,10 @@ class _RestaurantPageState extends State<RestaurantPage> {
               title: Text('Edit Profile'),
               trailing: Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
+                  Navigator.push(
+         context,
+         MaterialPageRoute(builder: (context) => ProfilePage()),
+       );
                 // TODO: Implement Edit Profile
               },
             ),
@@ -92,6 +98,10 @@ class _RestaurantPageState extends State<RestaurantPage> {
               title: Text('Change password'),
               trailing: Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
+                 Navigator.push(
+         context,
+         MaterialPageRoute(builder: (context) => ChangePasswordScreen()),
+       );
                 // TODO: Implement Change Password
               },
             ),

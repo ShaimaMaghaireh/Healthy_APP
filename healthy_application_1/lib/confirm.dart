@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthy_application_1/changePassword.dart';
+import 'package:healthy_application_1/home.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -99,7 +100,7 @@ class _ConfirmInfoScreenState extends State<ConfirmInfoScreen> {
               //? Handle create account
                Navigator.push(
          context,
-         MaterialPageRoute(builder: (context) => ChangePasswordScreen()),
+         MaterialPageRoute(builder: (context) => RestaurantPage()),
        );
             },
             style: ElevatedButton.styleFrom(

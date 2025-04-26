@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:healthy_application_1/changePassword.dart';
 import 'package:healthy_application_1/profil.dart';
+import 'package:healthy_application_1/profiletoFollow.dart';
 
 class RestaurantPage extends StatefulWidget {
   @override
@@ -81,7 +82,9 @@ class _RestaurantPageState extends State<RestaurantPage> {
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Text("Account settings", style: TextStyle(color: Colors.grey)),
+              child: Text("Account settings", 
+              style: 
+              TextStyle(color: Colors.grey,fontSize: 25,fontWeight: FontWeight.bold)),
             ),
             ListTile(
               title: Text('Edit Profile'),
@@ -116,10 +119,11 @@ class _RestaurantPageState extends State<RestaurantPage> {
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Text("More", style: TextStyle(color: Colors.grey)),
+              child: Text("More", 
+              style: TextStyle(color: Colors.grey,fontSize: 25,fontWeight: FontWeight.bold)),
             ),
             ListTile(
-              title: Text('privacy policy'),
+              title: Text('privacy settings'),
               trailing: Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
                 // TODO: Implement Privacy Policy
@@ -384,11 +388,19 @@ Widget buildRestaurantCard2() {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CircleAvatar(
-  maxRadius: 20,
-  child: Image.network
-("https://www.tastebudsmarketdelivery.com/uploads/b/35257920-917b-11ee-9aa7-6527960c123f/Taste%20Buds.png"),
-),
+                  GestureDetector(
+                    onTap: () {
+                        Navigator.push(
+         context,
+         MaterialPageRoute(builder: (context) => ProfileFollowPage()),
+       );
+                    },
+                    child: CircleAvatar(
+                      maxRadius: 20,
+                      child: Image.network
+                    ("https://www.tastebudsmarketdelivery.com/uploads/b/35257920-917b-11ee-9aa7-6527960c123f/Taste%20Buds.png"),
+                    ),
+                  ),
                  
                   Text("Taste Buds", style: TextStyle(fontWeight: FontWeight.bold)),
                   SizedBox(height: 4),

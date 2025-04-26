@@ -29,7 +29,7 @@ class _LocationSelectionPageState extends State<LocationSelectionPage> {
   String? selectedCity;
 
   List<String> states = ['California', 'Texas', 'Florida'];
-  List<String> countries = ['Counrty A', 'Counrty B', 'Counrty C'];
+  List<String> countries = ['County A', 'County B', 'County C'];
   List<String> cities = ['City 1', 'City 2', 'City 3'];
 
   @override
@@ -65,21 +65,21 @@ Container(
                   ),
                   const SizedBox(height: 30),
                   buildDropdown(
-                    hint: 'Your State',
+                    hint: 'State',
                     value: selectedState,
                     items: states,
                     onChanged: (value) => setState(() => selectedState = value),
                   ),
                   const SizedBox(height: 15),
                   buildDropdown(
-                    hint: 'Country',
+                    hint: 'County',
                     value: selectedCounrty,
                     items: countries,
                     onChanged: (value) => setState(() => selectedCounrty = value),
                   ),
                   const SizedBox(height: 15),
                   buildDropdown(
-                    hint: 'City state',
+                    hint: 'City',
                     value: selectedCity,
                     items: cities,
                     onChanged: (value) => setState(() => selectedCity = value),
